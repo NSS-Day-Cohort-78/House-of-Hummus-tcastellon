@@ -3,8 +3,9 @@
     justify-content: space-evenly;
 }
 
-.options {
+.selections {
     flex-basis: 24%;
+    flex-wrap: wrap;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: 1rem;

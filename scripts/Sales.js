@@ -1,10 +1,16 @@
 export const Sales = async () => {
-    const sales = await fetch("http://localhost:8088/purchases").then(res => res.json())
+    const sales = await fetch("http://localhost:8088/purchases?_expand=entree&_expand=vegetable&_expand=side").then(res => res.json())
 
-    let salesDivs = sales.map(sale)
+    let salesHTML = sales.map(
+        (sale) => {
+            return `
+                <section class="orders-placed-container">
+                    <p>Receipt #${sale.id} = ${sale.orderTotal.toLocaleString("en-US", {style: "currency", currency: "USD"})}
+            `
+        })
 
-    salesDivs = salesDivs.join("")
+    salesHTML = salesHTML.join("")
 
-    return salesDivs
+    return salesHTML
 }
 

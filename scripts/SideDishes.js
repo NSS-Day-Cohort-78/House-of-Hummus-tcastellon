@@ -1,6 +1,16 @@
+import { setSide } from "./transientState.js"
+
+const sideChangeHandler = (changeEvent) => {
+    if(changeEvent.target.name === "sides") {
+        setSide(parseInt(changeEvent.target.value), parseFloat(changeEvent.target.dataset.sideprice))
+    }
+}
+
 export const sideOptions = async () => {
     const response = await fetch("http://localhost:8088/sides")
     const sides = await response.json()
+
+    document.addEventListener("change", sideChangeHandler)
 
     let sidesHTML = ``
 

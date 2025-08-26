@@ -2,16 +2,16 @@ export const entreeOptions = async () => {
     const response = await fetch("http://localhost:8088/entrees")
     const entrees = await response.json()
 
-    let entreeHTML = ``
+    let entreesHTML = ``
 
     const divStringArray = entrees.map(
         (entree) => {
             return `<div>
-            <input type="radio" name="entree" data-entreePrice="${entree.price}" value="${entree.id}" /> ${entree.name}
+            <input type="radio" name="entree" data-entreePrice="${entree.price.toFixed(2)}" value="${entree.id}" /> ${entree.name}
             </div>`
         }
     )
-    entreeHTML = divStringArray.join("")
+    entreesHTML = divStringArray.join("")
     
-    return entreeHTML
+    return entreesHTML
 }

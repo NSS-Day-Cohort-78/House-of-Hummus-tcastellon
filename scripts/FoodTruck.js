@@ -1,9 +1,13 @@
 // import { Sales } from "./Sales.js"
 import { entreeOptions } from "./Entrees.js"
+import { vegetableOptions } from "./Vegetables.js"
+import { sideOptions } from "./SideDishes.js"
 
 export const FoodTruck = async() => {
     // const salesHTML = Sales()
     const entreesHTML = await entreeOptions()
+    const veggiesHTML = await vegetableOptions()
+    const sidesHTML = await sideOptions()
 
     return `
         <header class="header">
@@ -17,9 +21,11 @@ export const FoodTruck = async() => {
             </div>
             <div class="veggie-dish">
                 <h3>Vegetable</h3>
+                ${veggiesHTML}
             </div>
             <div class="side-dish">
                 <h3>Sides</h3>
+                ${sidesHTML}
             </div>
         </article>
         <article>

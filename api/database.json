@@ -151,6 +151,27 @@
       "sideId": 1,
       "orderTotal": 16.25,
       "id": 3
+    },
+    {
+      "entreeId": 10,
+      "vegetableId": 6,
+      "sideId": 4,
+      "orderTotal": 20.6,
+      "id": 4
+    },
+    {
+      "entreeId": 2,
+      "vegetableId": 4,
+      "sideId": 2,
+      "orderTotal": 18.95,
+      "id": 5
+    },
+    {
+      "entreeId": 3,
+      "vegetableId": 8,
+      "sideId": 3,
+      "orderTotal": 19.19,
+      "id": 6
     }
   ]
 }
